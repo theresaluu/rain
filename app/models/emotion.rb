@@ -1,3 +1,5 @@
 class Emotion < ApplicationRecord
-  validates :recognize, length: { maximum: 140 }, presence: true
+  belongs_to :user
+
+  validates :recognize, presence: true
 end
