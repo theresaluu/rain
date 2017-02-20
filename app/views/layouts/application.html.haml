@@ -9,18 +9,16 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
     %script(src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js")
     %script(src="https://use.fontawesome.com/d84584ad34.js")
-  %body
+  %body.brown.lighten-5
     .navbar-wrapper
       %nav.green.lighten-2
-        .nav-wrapper.green.lighten-2
+        .nav-wrapper
           %a.brand-logo.center(href = "#!")
             %i.fa.fa-tint(aria-hidden = "true")
             Rain
 
           %span.right
             - if current_user
-              Logged in as
-              = current_user.email
               = link_to "Log Out", logout_path
             - else
               = link_to "Sign Up", signup_path
@@ -29,4 +27,4 @@
             - flash.each do |name, msg|
               = content_tag :div, msg, id: "flash_#{name}"
 
-  = yield
+    = yield
