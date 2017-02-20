@@ -8,18 +8,25 @@
     %link(rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css")
     = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
     %script(src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js")
+    %script(src="https://use.fontawesome.com/d84584ad34.js")
   %body
-    #container
-      #user_header
-        - if current_user
-          Logged in as
-          = current_user.email
-          = link_to "Log Out", logout_path
-        - else
-          = link_to "Sign Up", signup_path
-          or
-          = link_to "Log In", login_path
-      - flash.each do |name, msg|
-        = content_tag :div, msg, id: "flash_#{name}"
+    .navbar-wrapper
+      %nav.green.lighten-2
+        .nav-wrapper.green.lighten-2
+          %a.brand-logo.center(href = "#!")
+            %i.fa.fa-tint(aria-hidden = "true")
+            Rain
 
-      = yield
+          %span.right
+            - if current_user
+              Logged in as
+              = current_user.email
+              = link_to "Log Out", logout_path
+            - else
+              = link_to "Sign Up", signup_path
+              or
+              = link_to "Log In", login_path
+            - flash.each do |name, msg|
+              = content_tag :div, msg, id: "flash_#{name}"
+
+  = yield
