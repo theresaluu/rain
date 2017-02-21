@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
   resources :emotions, except: :destroy
-  resources :categories, only: [:index, :show]
+  resources :categories, only: [:index]
 
   root to: 'emoji#menu'
 end

@@ -1,0 +1,8 @@
+- if current_user
+  .row
+    %br
+    .col.s4.offset-s5
+      - @categories.each do |c|
+        %a.category.btn-flat(href ="#!")
+          = c.name
+        %br
