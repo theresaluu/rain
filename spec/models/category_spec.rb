@@ -5,4 +5,5 @@ RSpec.describe Category, type: :model do
   it {
     should validate_inclusion_of(:name).in_array(%w(positive negative))
   }
+  it {should validate_presence_of(:name)}
 end
