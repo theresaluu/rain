@@ -1,11 +1,26 @@
 .row
-  .col.s10
-    =form_for @emotion do |e|
-      =e.hidden_field :category_id, value: params[:category_id]
-      =e.hidden_field :user_id, value: current_user.id
-      =e.hidden_field :investigation
-      =e.hidden_field :action_item
-      =e.hidden_field :current
+  .col.s10.offset-s1
+    = form_for @emotion do |e|
+      = e.hidden_field :category_id, value: @emotion.category_id || params[:category_id]
+      = e.hidden_field :user_id, value: current_user.id
       .input-field
-        =e.text_field :recognize, placeholder: 'How are you?'
-      =e.submit
+        = e.text_field :recognize, placeholder: 'How are you?'
+      - unless @emotion.new_record?
+        .input-field
+          = e.text_field :investigation
+          %label
+            Investigation
+        .input-field
+          = e.text_field :action_item
+          %label
+            Where do you go from here?
+        = e.check_box :current, checked: @emotion.current?
+        = e.label :current, "Is this present in your life?"
+      %br
+      .right
+        .row
+          .col.s3.offset-s1
+            %small
+              = link_to "Cancel", emotions_path()
+          .col.s4
+            = e.submit

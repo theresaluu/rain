@@ -16,6 +16,21 @@ class EmotionsController < ApplicationController
   def index
     @emotions = current_user.emotions
   end
+
+  def edit
+    @emotion = Emotion.find(params[:id])
+  end
+
+  def update
+    @emotion = Emotion.find(params[:id])
+    if @emotion.update_attributes(emotion_params)
+      redirect_to emotions_path
+    else
+      render "edit"
+    end
+
+  end
+
   private
   def emotion_params
     params.require(:emotion).permit(:recognize, :category_id, :user_id,

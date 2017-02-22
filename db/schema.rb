@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170220234026) do
+ActiveRecord::Schema.define(version: 20170222064311) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,9 +25,9 @@ ActiveRecord::Schema.define(version: 20170220234026) do
     t.text     "recognize"
     t.text     "investigation"
     t.text     "action_item"
-    t.boolean  "current"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.string   "current",       default: "t"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.integer  "user_id"
     t.integer  "category_id"
     t.index ["category_id"], name: "index_emotions_on_category_id", using: :btree
