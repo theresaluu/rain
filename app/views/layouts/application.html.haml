@@ -16,15 +16,16 @@
           %a.brand-logo.center(href = "#!")
             %i.fa.fa-tint(aria-hidden = "true")
             Rain
-
-          %span.right
-            - if current_user
-              = link_to "Log Out", logout_path
-            - else
-              = link_to "Sign Up", signup_path
-              or
-              = link_to "Log In", login_path
-            - flash.each do |name, msg|
-              = content_tag :div, msg, id: "flash_#{name}"
+    .row
+      .col.s3.offset-s9
+        %span.right
+          - if current_user
+            = link_to "Log Out", logout_path
+          - else
+            = link_to "Sign Up", signup_path
+            or
+            = link_to "Log In", login_path
+          - flash.each do |name, msg|
+            = content_tag :div, msg, id: "flash_#{name}"
 
     = yield

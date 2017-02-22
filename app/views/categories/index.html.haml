@@ -3,5 +3,24 @@
     %br
     .col.s4.offset-s5
       - @categories.each do |c|
-        =link_to c.name, new_emotion_path(category_id: c.id)
-        %br
+        %p
+          =link_to new_emotion_path(category_id: c.id) do
+            - if c.name == "positive"
+              .row
+                .col.s1
+                  %i.fa.fa-heart(aria-hidden = "true")
+                .col.s11
+                  Positive
+            - else
+              .row
+                .col.s1
+                  %i.fa.fa-heart-o(aria-hidden = "true")
+                .col.s11
+                  Needs Love
+      %p
+        =link_to emotions_path() do
+          .row
+            .col.s1
+              %i.fa.fa-tint(aria-hidden = "true")
+            .col.s11
+              Current Emotions
