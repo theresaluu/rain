@@ -1,1 +1,10 @@
-emoji menu
+.row
+  .col.s8.offset-s4
+    %b
+      How is Our Community Feeling?
+    - @emotions.each do |e|
+      %p
+        =e.recognize
+    %br
+    .right
+      reflect. and give yourself a break.
