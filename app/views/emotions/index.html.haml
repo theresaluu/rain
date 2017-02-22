@@ -1,0 +1,13 @@
+.row
+  .col.s10.offset-s1
+    - @emotions.each do |e|
+      %p
+        - if Category.find(e.category_id).name == "positive"
+          %i.fa.fa-heart
+        - else
+          %i.fa.fa-heart-o
+        = e.recognize
+        %span.magnify
+          = link_to edit_emotion_path(e) do
+            %i.fa.fa-search
+

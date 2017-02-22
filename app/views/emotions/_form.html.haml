@@ -1,0 +1,11 @@
+.row
+  .col.s10
+    =form_for @emotion do |e|
+      =e.hidden_field :category_id, value: params[:category_id]
+      =e.hidden_field :user_id, value: current_user.id
+      =e.hidden_field :investigation
+      =e.hidden_field :action_item
+      =e.hidden_field :current
+      .input-field
+        =e.text_field :recognize, placeholder: 'How are you?'
+      =e.submit

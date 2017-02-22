@@ -3,6 +3,5 @@
     %br
     .col.s4.offset-s5
       - @categories.each do |c|
-        %a.category.btn-flat(href ="#!")
-          = c.name
+        =link_to c.name, new_emotion_path(category_id: c.id)
         %br
