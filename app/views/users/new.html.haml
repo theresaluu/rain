@@ -1,30 +1,32 @@
-%h1
-  Sign Up
+.row
+  .col.s12.l10.offset-l1
+    %h4
+      Sign Up
 
-= form_for @user do |f|
-  - if @user.errors.any?
-    .error_messages
-      %h2
-        Form is invalid
-      %ul
-        = @user.errors.full_messages.each do |message|
-          %li
-            =message
+    = form_for @user do |f|
+      - if @user.errors.any?
+        .error_messages
+          %h2
+            Form is invalid
+          %ul
+            = @user.errors.full_messages.each do |message|
+              %li
+                =message
 
-  .field
-    = f.label :email
-    %br
-    = f.text_field :email
+      .field
+        = f.label :email
+        %br
+        = f.text_field :email
 
-  .field
-    = f.label :password
-    %br
-    = f.text_field :password
+      .field
+        = f.label :password
+        %br
+        = f.text_field :password
 
-  .field
-    = f.label :password_confirmation
-    %br
-    = f.text_field :password_confirmation
+      .field
+        = f.label :password_confirmation
+        %br
+        = f.text_field :password_confirmation
 
-  .actions
-    = f.submit
+      .actions
+        = f.submit

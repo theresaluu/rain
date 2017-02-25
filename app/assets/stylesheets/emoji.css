@@ -1,0 +1,9 @@
+@media only screen and (max-width: 600px) {
+  .emotion-snippets {
+    font-size: 18px;
+  }
+  .reminder {
+    font-size: 20px;
+    text-align: center;
+  }
+}
