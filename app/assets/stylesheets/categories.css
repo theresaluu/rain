@@ -1,0 +1,12 @@
+.menu-icon {
+  padding-right: 10px;
+}
+.menu {
+  font-size: 25px;
+}
+
+@media only screen and (max-width: 600px) {
+  .menu {
+    text-align: center;
+  }
+}
