@@ -1,5 +1,5 @@
 .row
-  .col.s10.offset-s1
+  .col.s12.m10.offset-m1
     = form_for @emotion do |e|
       = e.hidden_field :category_id, value: @emotion.category_id || params[:category_id]
       = e.hidden_field :user_id, value: current_user.id
@@ -9,13 +9,13 @@
         .input-field
           = e.text_field :investigation
           %label
-            Investigation
+            Let's Investigate.  What unmet need requires attn?
         .input-field
           = e.text_field :action_item
           %label
             Where do you go from here?
         = e.check_box :current, checked: @emotion.current?
-        = e.label :current, "Is this present in your life?"
+        = e.label :current, "Yes, this is present in my life."
       %br
       .right
         .row
@@ -23,4 +23,4 @@
             %small
               = link_to "Cancel", emotions_path()
           .col.s4
-            = e.submit
+            = e.submit "Acknowledge"

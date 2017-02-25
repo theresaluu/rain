@@ -14,14 +14,18 @@
       %nav.green.lighten-2
         .nav-wrapper
           .row
-            .col.s9
+            .col.s6.m9
               %a.brand-logo.center(href = "/")
-                %i.fa.fa-tint(aria-hidden = "true")
+                %i.banner-raindrop.fa.fa-tint(aria-hidden = "true")
                 Rain
-            .col.s3
+            .col.s6.m3
               %span.right
                 - if current_user
                   = link_to "Log Out", logout_path
+                - elsif current_page?('/login')
+                  = link_to "Sign Up", signup_path
+                - elsif current_page?('/signup')
+                  = link_to "Log In", login_path
                 - else
                   = link_to "Sign Up", signup_path
                   or

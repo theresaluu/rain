@@ -1,12 +1,14 @@
 .row
-  .col.s10.offset-s1
+  .col.s12.m10.offset-m1
     %h5.center-align
       How is Our Community Feeling?
-    - @emotions.each do |e|
-      %p.center-align
-        =e.recognize
+    .emotion-snippets
+      - @emotions.each do |e|
+        %p.center-align
+          =e.recognize
     %br
-    .right
-      reflect. and
-      %b
-        give yourself a break.
+.row
+  .col.s12.m3.offset-m9.reminder
+    reflect. &
+    %b
+      give yourself a break.
