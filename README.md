@@ -10,8 +10,11 @@ attempt to identify the pain-body and seperate from the ego as discussed in
 [New Earth](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Dstripbooks&field-keywords=new+earth).
 
 R- recognize
+
 A- Allow to just be
+
 I- Investigate inner experience with kindness
+
 N- Non-Identification
 
 You can record your thoughts somewhere for yourself.  Come back at a later time
