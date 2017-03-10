@@ -25,8 +25,13 @@
                 - else
                   - if current_page?('/login')
                     = link_to "Sign Up", signup_path
-                  - else
+                  - elsif current_page?('/signup')
                     = link_to "Log In", login_path
+                  - else
+                    = link_to "Sign Up", signup_path
+                    or
+                    = link_to "Log In", login_path
+
                 - flash.each do |name, msg|
                   = content_tag :div, msg, id: "flash_#{name}"
 
