@@ -15,21 +15,23 @@
         .nav-wrapper
           .row
             .col.s6.m9
-              %a.brand-logo.center(href = "/")
+              %a#rain-logo.brand-logo.center(href = "/")
                 %i.banner-raindrop.fa.fa-tint(aria-hidden = "true")
                 Rain
             .col.s6.m3
-              %span.right
+              %span.right.nav-action
                 - if current_user
                   = link_to "Log Out", logout_path
-                - elsif current_page?('/login')
-                  = link_to "Sign Up", signup_path
-                - elsif current_page?('/signup')
-                  = link_to "Log In", login_path
                 - else
-                  = link_to "Sign Up", signup_path
-                  or
-                  = link_to "Log In", login_path
+                  - if current_page?('/login')
+                    = link_to "Sign Up", signup_path
+                  - elsif current_page?('/signup')
+                    = link_to "Log In", login_path
+                  - else
+                    = link_to "Sign Up", signup_path
+                    or
+                    = link_to "Log In", login_path
+
                 - flash.each do |name, msg|
                   = content_tag :div, msg, id: "flash_#{name}"
 
