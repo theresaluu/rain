@@ -1,3 +1,12 @@
+.emotion-snippets {
+  font-stretch: condensed;
+  font-weight: 200;
+}
+
+.reminder {
+  font-stretch: condensed;
+  font-weight: 200;
+}
 @media only screen and (max-width: 600px) {
   .emotion-snippets {
     font-size: 18px;
