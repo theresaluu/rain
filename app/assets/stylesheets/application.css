@@ -13,38 +13,42 @@
  *= require_tree .
  *= require_self
  */
-@media only screen and (max-width: 600px) {
-  .banner-raindrop {
-    padding-top:15px;
-  }
+body{
+  font-size: 2.0vw;
+}
+.nav-action {
+  font-size: 2.5vw;
+}
+
+@media (min-width : 360px) {
   #rain-logo {
-    font-size: 55px;
+    font-size: 10.0vw;
+  }
+  .banner-raindrop {
+    padding-top: 2.9vw;
   }
 }
-@media all and (min-width: 960px) {
-  body{
-    font-size: 55px;
-  }
+@media (min-width : 428px) {
   #rain-logo {
-    font-size: 70px;
+    font-size: 6.0vw;
+  }
+  .banner-raindrop {
+    padding-top: 4.0vw;
+  }
+}
+@media (min-width : 601px) {
+  .banner-raindrop {
+    padding-top: 0.8vw;
   }
   .nav-action {
-    font-size: 25px;
+    font-size: 1.5vw;
   }
 }
-@media all and (max-width: 959px) and (min-width:600px) {
-  body{
-    font-size: 16px;
-  }
+@media (min-width : 940px) {
   #rain-logo {
-    font-size: 16px;
+    font-size: 3.5vw;
   }
-}
-@media all and (max-width: 599px) and (min-width:320px) {
-  body{
-    font-size: 12px;
-  }
-  #rain-logo {
-    font-size: 12px;
+  .banner-raindrop {
+    padding-top: 0.4vw;
   }
 }
