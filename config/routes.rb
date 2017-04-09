@@ -3,6 +3,12 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
+  namespace :api, defaults: {format: 'json'} do
+    namespace :v1 do
+      resources :emotions
+    end
+  end
+
   resources :users
   resources :sessions
   resources :emotions, except: :destroy
