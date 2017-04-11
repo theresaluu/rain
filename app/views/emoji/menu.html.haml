@@ -12,3 +12,8 @@
     reflect. &
     %b
       give yourself a break.
+.row
+  -if current_user.present? && ApiKey.find(current_user.id).present?
+    %small
+      Access Token:
+      =ApiKey.find(current_user.id).access_token
