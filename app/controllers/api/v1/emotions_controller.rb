@@ -1,6 +1,7 @@
 module Api
   module V1
     class EmotionsController < ApplicationController
+      before_filter :restrict_access
 
       def create
         @emotion = Product.create(emotion_params)
@@ -28,6 +29,13 @@ module Api
         params.require(:emotion).permit(:recognize, :category_id, :user_id,
                                         :investigation, :action_item, :current)
       end
+
+      def restrict_access
+        authenticate_or_request_with_http_token do |token, options|
+          ApiKey.exists?(access_token: token)
+        end
+      end
+
     end
   end
 end
